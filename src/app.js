@@ -4,6 +4,8 @@ import rateRoute from "./routes/rate.route.js";
 import orderRoute from "./routes/order.route.js";
 
 const app = express();
+
+// middleware đọc JSON
 app.use(express.json());
 
 // TEST ROUTE
@@ -11,6 +13,7 @@ app.get("/", (req, res) => {
   res.send("API OK");
 });
 
+// routes
 app.use("/like", likeRoute);
 app.use("/rate", rateRoute);
 app.use("/order", orderRoute);

@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes } from "sequelize";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 export const sequelize = new Sequelize(
@@ -14,7 +15,7 @@ export const sequelize = new Sequelize(
   }
 );
 
-// test kết nối
+// test kết nối DB
 sequelize
   .authenticate()
   .then(() => console.log("✅ Kết nối DB thành công"))
@@ -25,6 +26,7 @@ import likeResModel from "./like_res.model.js";
 import rateResModel from "./rate_res.model.js";
 import orderModel from "./orders.model.js";
 
+// khởi tạo model
 export const like_res = likeResModel(sequelize, DataTypes);
 export const rate_res = rateResModel(sequelize, DataTypes);
 export const orders = orderModel(sequelize, DataTypes);
